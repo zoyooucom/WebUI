@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta content="text/html; charset=UTF-8" http-equiv="content-type">
+    <link href="styles/kendo.common.min.css" rel="stylesheet" />
+    <link href="styles/kendo.default.min.css" rel="stylesheet" />
+    <link href="styles/usermanagement.css" rel="stylesheet" />
+    <script src="js/jquery.min.js"></script>
+    <script src="js/kendo.web.min.js"></script>
+    <!--<script src="js/usermanagement.js"></script>-->
+    <script src="js/datepicker.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/cultures/kendo.culture.zh-CN.min.js"></script>
+<title>佐佑 － 用户信息</title>
+</head>
+<body>
+	<div class="topHeader"> 
+		<div class="navigationPanel">
+			<div class="menuContainer">
+			<ul id="navigationMenu">
+				<li>主页</li>
+				<li>帐户设置</li>
+				<li>通讯录</li>
+			</ul>
+			</div>
+		</div>
+	</div>
+	<div class="bodyContainer">
+<div class="profileContainer">
+	<div id="profileCover">
+		<div class="photoContainer">
+			<div class="profilePhoto">
+			<a class="profilePicThumb"> 
+			<img class="profilePic img" src="images/profilePic.jpg" alt="User Name">
+			</a>
+			</div>
+		</div>
+	</div>
+<div class="userProfile">
+	<div class="basicTitle">
+						<div class="basicNameWrap">
+							<p class="basicName" id="basicPanelTitle">基本信息</p>
+						</div>
+						
+					</div>
+	<!-- <div class="basicProfile">
+		    <div class="selector">
+        Select Product: <select data-role="dropdownlist" data-value-field="uid" data-text-field="name" data-bind="source: userProfileSource, value: currentUser"></select>
+    </div> -->
+	<table>
+		<tr>
+<th class="info">用户名</th>
+<td class="tdInfo"> <div class="userInfo"> <span data-bind="source: userProfileSource, text: userProfileSource.view()[0].userName, events: { change: change }"> </span> </div></td>
+</tr>
+<tr>
+<th class="info">昵称</th>
+<td class="tdInfo"> <div class="userInfo"> <span data-bind="text: userProfileSource.view()[0].nickName"> </span> </div></td>
+</tr>
+<tr>
+<th class="info">生日</th>
+<td class="tdInfo"> <div class="userInfo"> <span data-bind="text: userProfileSource.view()[0].dob"> </span></div></td>
+</tr>
+<tr>
+<th class="info">性别</th>
+<td class="tdInfo"> <div class="userInfo"> <span data-bind="text: userProfileSource.view()[0].contactinfo.address1"> </div></td>
+</tr>
+	</table>
+	<button id="basicProfileEdit" type="button" data-role="button" data-sprite-css-class="k-icon k-edit">修改</button>
+	</div>
+	<div class="popupWindow">
+	<div id="basicProfileWindow">
+		<table>
+		<tr>
+<th class="info">用户名</th>
+<td class="tdInfo"> <div class="userInfoUpdate"><input id="userName" class="inputText"/></div></td>
+</tr>
+<tr>
+<th class="info">昵称</th>
+<td class="tdInfo"> <div class="userInfoUpdate"><input id="nickName" class="inputText"/></div> </td>
+</tr>
+<tr>
+<th class="info">生日</th>
+<td class="tdInfo"> <div class="userInfoUpdate" id="birthdayPicker"> </div> </td>
+</tr>
+<tr>
+<th class="info">性别</th>
+<td class="tdInfo"> <div class="userInfoUpdate"> <select id="sex"> <option value="2" selected="1">男</option> <option value="1">女</option> </select> </div></td>
+</tr>
+	</table>
+	<button id="basicProfileSave" type="button" data-role="button" data-sprite-css-class="k-icon k-edit">保存</button>
+	<button id="basicProfileCancel" type="button" data-role="button" data-sprite-css-class="k-icon k-edit">取消</button>
+	</div>
+	</div>
+</div>
+</div>
+</body>
+</html>
