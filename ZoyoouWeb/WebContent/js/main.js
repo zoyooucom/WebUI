@@ -85,5 +85,6 @@ var crudServiceBaseUrl = "http://localhost:8080/ZoyoouWebService";
       }
   });
   
-  kendo.bind($(".profileContainer"), viewModel);
+  kendo.bind($(".userProfile"), viewModel);
+  kendo.bind($("#basicProfileWindow"), viewModel);
 });

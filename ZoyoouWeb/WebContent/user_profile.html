@@ -43,14 +43,10 @@
 						</div>
 						
 					</div>
-	<!-- <div class="basicProfile">
-		    <div class="selector">
-        Select Product: <select data-role="dropdownlist" data-value-field="uid" data-text-field="name" data-bind="source: userProfileSource, value: currentUser"></select>
-    </div> -->
 	<table>
 		<tr>
 <th class="info">用户名</th>
-<td class="tdInfo"> <div class="userInfo"> <span data-bind="source: userProfileSource, text: userProfileSource.view()[0].userName, events: { change: change }"> </span> </div></td>
+<td class="tdInfo"> <div class="userInfo"> <span data-bind="source: userProfileSource, text: userProfileSource.view()[0].userName"> </span> </div></td>
 </tr>
 <tr>
 <th class="info">昵称</th>
@@ -62,7 +58,7 @@
 </tr>
 <tr>
 <th class="info">性别</th>
-<td class="tdInfo"> <div class="userInfo"> <span data-bind="text: userProfileSource.view()[0].contactinfo.address1"> </div></td>
+<td class="tdInfo"> <div class="userInfo"> <span data-bind="text: userProfileSource.view()[0].contactinfo.address1"> </span> </div></td>
 </tr>
 	</table>
 	<button id="basicProfileEdit" type="button" data-role="button" data-sprite-css-class="k-icon k-edit">修改</button>
@@ -72,11 +68,11 @@
 		<table>
 		<tr>
 <th class="info">用户名</th>
-<td class="tdInfo"> <div class="userInfoUpdate"><input id="userName" class="inputText"/></div></td>
+<td class="tdInfo"> <div class="userInfoUpdate"><span id="userName" data-bind="text: userProfileSource.view()[0].userName"> </span></div></td>
 </tr>
 <tr>
 <th class="info">昵称</th>
-<td class="tdInfo"> <div class="userInfoUpdate"><input id="nickName" class="inputText"/></div> </td>
+<td class="tdInfo"> <div class="userInfoUpdate"><input id="nickName" type="text" class="k-textbox"  data-bind="value: userProfileSource.view()[0].nickName, events: { change: change }" /></div> </td>
 </tr>
 <tr>
 <th class="info">生日</th>
@@ -84,10 +80,10 @@
 </tr>
 <tr>
 <th class="info">性别</th>
-<td class="tdInfo"> <div class="userInfoUpdate"> <select id="sex"> <option value="2" selected="1">男</option> <option value="1">女</option> </select> </div></td>
+<td class="tdInfo"> <div class="userInfoUpdate"> </div></td>
 </tr>
 	</table>
-	<button id="basicProfileSave" type="button" data-role="button" data-sprite-css-class="k-icon k-edit">保存</button>
+	<button id="basicProfileSave" data-bind="click: save, enabled: hasChanges" type="button" data-role="button" data-sprite-css-class="k-icon k-edit">保存</button>
 	<button id="basicProfileCancel" type="button" data-role="button" data-sprite-css-class="k-icon k-edit">取消</button>
 	</div>
 	</div>
