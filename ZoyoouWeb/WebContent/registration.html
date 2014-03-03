@@ -6,6 +6,7 @@
     <link href="styles/kendo.default.min.css" rel="stylesheet" />
     <script src="js/jquery.min.js"></script>
     <script src="js/kendo.web.min.js"></script>
+    <script src="js/registration.js"></script>
 <title>佐佑 － 注册</title>
 </head>
 <body>
@@ -13,38 +14,19 @@
     <div class="registration">
         <form>
             <ul>
-                <li><label for="communityid">小区ID</label><input id="communityid" data-bind="value: communityID" /></li>
-                <li><label for="username">用户名:</label><input id="username" data-bind="value: userName" /></li>
-                <li><label for="gender">性别:</label><select id="gender" data-bind="source: genders, value: gender"></select></li>
+                <li><label for="communityid">小区ID:</label><span id="communityid" data-bind="text: userInfo.communityID"> </span></li>
+                <li><label for="username">用户名:</label><input id="username" data-bind="value: userInfo.userName" /></li>
+                <li><label for="gender">密码:</label><input id="password" data-bind="value: userInfo.passWord" /></li>
             </ul>
             <input type="checkbox" id="agree" data-bind="checked: agreed" /> <label for="agree">我已阅读并同意《用户注册协议》</label>
             <br /><br />
             <button data-bind="enabled: agreed, click: register" style="display: block">注册</button>
         </form>
     </div>
-    <div class="confirmation" data-bind="visible: confirmed">
-        Thank you for your registration, <span data-bind="text: userName"></span>
+    <!--<div class="confirmation" data-bind="visible: confirmed">
+        Thank you for your registration, <span data-bind="text: userInfo.userName"> </span>
         <br /><br />
+    </div>-->
     </div>
-    </div>
-    <script>
-        $(document).ready(function() {
-            var viewModel = kendo.observable({
-            	communityID: "1",
-                userName: "张三",
-                genders: ["男", "女"],
-                gender: "男",
-                agreed: false,
-                confirmed: false,
-                register: function(e) {
-                    e.preventDefault();
-
-                    this.set("confirmed", true);
-                }
-            });
-
-            kendo.bind($("#signup"), viewModel);
-        });
-    </script>
 </body>
 </html>

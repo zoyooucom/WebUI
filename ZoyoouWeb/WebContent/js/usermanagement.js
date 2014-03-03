@@ -1,4 +1,4 @@
-var crudServiceBaseUrl = "http://localhost:8080/ZoyoouWebService";
+var crudServiceBaseUrl = "http://BELC02KK1KUFFT3:8080/ZoyoouWebService";
 
         $(document).ready(function() {
         	var User = kendo.data.Model.define({
